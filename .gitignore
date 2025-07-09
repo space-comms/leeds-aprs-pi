@@ -1,0 +1,154 @@
+# .gitignore for Leeds APRS Pi Project
+
+# Logs directory and files
+logs/
+*.log
+*.log.*
+
+# Data directory (runtime data)
+data/
+*.dat
+*.db
+*.sqlite
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Backup files
+*.bak
+*.backup
+*.orig
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Docker files
+.dockerignore
+docker-compose.override.yml
+docker-compose.local.yml
+
+# IDE and editor files
+.vscode/
+.vscode-server/
+.idea/
+*.swp
+*.swo
+*~
+
+# VS Code Copilot and AI-related files
+.copilot/
+.copilot-chat/
+.github-copilot/
+copilot-*
+.ai-cache/
+.cursor/
+.windsurf/
+
+# AI and LLM generated files
+*-ai-generated*
+*-copilot-*
+.anthropic/
+.openai/
+.claude/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Configuration overrides
+config/*.local.conf
+config/*.override.conf
+
+# Personal configuration files
+docker-compose.personal.yml
+*.personal.*
+
+# Build artifacts
+build/
+dist/
+*.tar.gz
+*.zip
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Node.js files (if web interface added)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test files
+test-results/
+*.test.log
+
+# SSL certificates and keys
+*.key
+*.crt
+*.pem
+*.p12
+
+# Local hardware test files
+hardware-test-*
+rtl-test-*
+gps-test-*
+
+# Development and debugging files
+debug/
+*.debug
+*.trace
+core.*
+
+# AI chat history and prompts
+chat-history/
+prompts/
+*.prompt
+*.chat
+.conversation/
+
+# VS Code workspace files (if created)
+*.code-workspace
+.vscode-server-insiders/
+
+# JetBrains IDEs
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim/Neovim
+.nvimlog
+Session.vim
+.netrwhist
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Local development overrides
+*.local
+*.dev
+dev-*
+local-*
