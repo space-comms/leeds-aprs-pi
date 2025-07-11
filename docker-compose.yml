@@ -1,21 +1,21 @@
-/*
-Changelog - docker-compose.yml
-
-[Initial]
-- Multi-service Docker Compose configuration for APRS system
-- USB device mapping for RTL-SDR and GPS hardware
-- Volume mounts for configuration, scripts, and persistent data
-- Environment variable configuration for easy customization
-- Network configuration for APRS-IS connectivity
-- Restart policies for reliable operation
-- Port mapping for monitoring and debugging
-
-[Purpose]
-- Orchestrates APRS receiver, transmitter, and beacon services
-- Provides hardware abstraction for different Pi configurations
-- Enables easy deployment and management of the APRS system
-- Supports development and production environments
-*/
+#
+# Changelog - docker-compose.yml
+#
+# [Initial]
+# - Multi-service Docker Compose configuration for APRS system
+# - USB device mapping for RTL-SDR and GPS hardware
+# - Volume mounts for configuration, scripts, and persistent data
+# - Environment variable configuration for easy customization
+# - Network configuration for APRS-IS connectivity
+# - Restart policies for reliable operation
+# - Port mapping for monitoring and debugging
+#
+# [Purpose]
+# - Orchestrates APRS receiver, transmitter, and beacon services
+# - Provides hardware abstraction for different Pi configurations
+# - Enables easy deployment and management of the APRS system
+# - Supports development and production environments
+#
 
 version: '3.8'
 
@@ -43,7 +43,7 @@ services:
     # Port mappings
     ports:
       - "14580:14580"                         # APRS-IS port
-      - "8000:8000"                           # Web interface
+      - "8000:8000"                           # API server
       - "8001:8001"                           # Status monitoring
     
     # Environment variables - CUSTOMIZE THESE FOR YOUR STATION
@@ -75,7 +75,7 @@ services:
       retries: 3
       start_period: 40s
 
-# Optional: Web dashboard service
+  # Web dashboard service
   dashboard:
     image: nginx:alpine
     container_name: aprs-dashboard
@@ -87,7 +87,7 @@ services:
       - aprs
     restart: unless-stopped
 
-# Optional: Log aggregation service
+  # Log aggregation service
   logmon:
     image: alpine:latest
     container_name: aprs-logmon

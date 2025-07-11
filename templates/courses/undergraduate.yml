@@ -1,0 +1,428 @@
+# Leeds Space Comms - Undergraduate Course Template
+# Amateur Radio Communications and APRS Systems
+
+course_info:
+  name: "Amateur Radio Communications"
+  code: "ELEC3090"
+  level: "undergraduate"
+  credits: 10
+  duration: "12_weeks"
+  department: "Electronic and Electrical Engineering"
+  prerequisites:
+    - "Basic electronics knowledge"
+    - "Understanding of radio fundamentals"
+    - "Basic programming concepts"
+
+learning_objectives:
+  primary:
+    - "Understand APRS protocol fundamentals and applications"
+    - "Configure and operate amateur radio APRS stations"
+    - "Analyze RF propagation patterns and network topology"
+    - "Design and implement digital communication systems"
+  
+  secondary:
+    - "Develop practical skills with radio hardware"
+    - "Learn network protocol analysis techniques"
+    - "Practice technical documentation and reporting"
+    - "Understand regulatory and licensing requirements"
+
+equipment_requirements:
+  essential:
+    - "Raspberry Pi 4 with Leeds APRS Pi system"
+    - "RTL-SDR dongle for receiving"
+    - "VHF/UHF antenna (quarter-wave or better)"
+    - "USB GPS receiver (optional)"
+  
+  recommended:
+    - "Handheld amateur radio transceiver"
+    - "SWR meter for antenna testing"
+    - "Oscilloscope for signal analysis"
+    - "Network analyzer (shared lab equipment)"
+
+weekly_schedule:
+  week_1:
+    title: "Introduction to APRS"
+    theory:
+      - "Amateur radio licensing overview"
+      - "APRS protocol fundamentals"
+      - "Packet radio concepts"
+      - "Network topology and infrastructure"
+    
+    practical:
+      - "Set up Leeds APRS Pi system"
+      - "Configure basic station parameters"
+      - "Send first APRS beacon"
+      - "Monitor local APRS traffic"
+    
+    assessment:
+      type: "lab_report"
+      weight: "5%"
+      deliverables:
+        - "System configuration documentation"
+        - "Network traffic analysis"
+        - "Reflection on amateur radio regulations"
+  
+  week_2:
+    title: "Hardware Configuration and Testing"
+    theory:
+      - "RTL-SDR principles and applications"
+      - "GPS integration in mobile systems"
+      - "Audio interfaces and modems"
+      - "Antenna theory for VHF/UHF"
+    
+    practical:
+      - "Configure RTL-SDR for APRS reception"
+      - "Set up GPS tracking system"
+      - "Test antenna system performance"
+      - "Measure received signal strength"
+    
+    assessment:
+      type: "technical_report"
+      weight: "10%"
+      deliverables:
+        - "Hardware configuration guide"
+        - "Performance measurements"
+        - "Antenna pattern analysis"
+  
+  week_3:
+    title: "Protocol Analysis and Packet Structure"
+    theory:
+      - "AX.25 packet radio protocol"
+      - "APRS packet formats and types"
+      - "Position encoding and compression"
+      - "Message routing and digipeating"
+    
+    practical:
+      - "Decode APRS packets manually"
+      - "Analyze packet headers and payloads"
+      - "Configure custom beacon messages"
+      - "Set up digipeater functionality"
+    
+    assessment:
+      type: "protocol_analysis"
+      weight: "15%"
+      deliverables:
+        - "Packet decode documentation"
+        - "Protocol flow diagrams"
+        - "Custom beacon implementation"
+  
+  week_4:
+    title: "Network Topology and Routing"
+    theory:
+      - "APRS-IS infrastructure"
+      - "IGate operation and configuration"
+      - "WIDEn-N digipeating algorithm"
+      - "Network coverage and redundancy"
+    
+    practical:
+      - "Configure IGate functionality"
+      - "Map local APRS network topology"
+      - "Test message routing paths"
+      - "Analyze network performance metrics"
+    
+    assessment:
+      type: "network_analysis"
+      weight: "15%"
+      deliverables:
+        - "Network topology map"
+        - "Routing analysis report"
+        - "IGate configuration guide"
+  
+  week_5:
+    title: "Mobile Operations and GPS Integration"
+    theory:
+      - "Mobile APRS applications"
+      - "GPS coordinate systems"
+      - "Position ambiguity and privacy"
+      - "Smart beaconing algorithms"
+    
+    practical:
+      - "Configure mobile beacon system"
+      - "Test GPS accuracy and precision"
+      - "Implement smart beaconing"
+      - "Track mobile station movement"
+    
+    assessment:
+      type: "mobile_demo"
+      weight: "15%"
+      deliverables:
+        - "Mobile system demonstration"
+        - "GPS tracking analysis"
+        - "Smart beaconing implementation"
+  
+  week_6:
+    title: "Emergency Communications"
+    theory:
+      - "APRS in emergency scenarios"
+      - "EmComm protocols and procedures"
+      - "Interoperability considerations"
+      - "Backup power and portable operations"
+    
+    practical:
+      - "Set up emergency station configuration"
+      - "Test backup power systems"
+      - "Practice emergency message handling"
+      - "Coordinate with local EmComm groups"
+    
+    assessment:
+      type: "emergency_exercise"
+      weight: "10%"
+      deliverables:
+        - "Emergency deployment plan"
+        - "Exercise participation report"
+        - "System reliability analysis"
+  
+  week_7:
+    title: "Data Collection and Analysis"
+    theory:
+      - "APRS data logging and storage"
+      - "Statistical analysis techniques"
+      - "Propagation studies using APRS"
+      - "Research methodology"
+    
+    practical:
+      - "Set up automated data collection"
+      - "Analyze historical APRS data"
+      - "Generate statistical reports"
+      - "Design propagation study"
+    
+    assessment:
+      type: "data_analysis"
+      weight: "15%"
+      deliverables:
+        - "Data collection system"
+        - "Statistical analysis report"
+        - "Research proposal"
+  
+  week_8:
+    title: "Advanced Configuration and Optimization"
+    theory:
+      - "System performance optimization"
+      - "Interference mitigation techniques"
+      - "Advanced Direwolf features"
+      - "Network protocol debugging"
+    
+    practical:
+      - "Optimize system performance"
+      - "Troubleshoot common issues"
+      - "Implement advanced features"
+      - "Debug protocol problems"
+    
+    assessment:
+      type: "optimization_report"
+      weight: "10%"
+      deliverables:
+        - "Performance optimization guide"
+        - "Troubleshooting procedures"
+        - "Advanced feature implementation"
+
+  week_9:
+    title: "Integration with Other Systems"
+    theory:
+      - "APRS weather station integration"
+      - "Telemetry data transmission"
+      - "IoT and sensor networks"
+      - "Cross-platform compatibility"
+    
+    practical:
+      - "Connect weather sensors"
+      - "Transmit telemetry data"
+      - "Integrate with IoT platforms"
+      - "Test cross-platform operation"
+    
+    assessment:
+      type: "integration_project"
+      weight: "15%"
+      deliverables:
+        - "Sensor integration documentation"
+        - "Telemetry system demonstration"
+        - "IoT platform interface"
+
+  week_10:
+    title: "Project Development"
+    theory:
+      - "Project planning and management"
+      - "Technical documentation standards"
+      - "Testing and validation procedures"
+      - "Presentation techniques"
+    
+    practical:
+      - "Define individual project scope"
+      - "Develop project timeline"
+      - "Begin implementation work"
+      - "Create preliminary documentation"
+    
+    assessment:
+      type: "project_proposal"
+      weight: "5%"
+      deliverables:
+        - "Project proposal document"
+        - "Implementation timeline"
+        - "Resource requirements list"
+
+  week_11:
+    title: "Project Implementation"
+    theory:
+      - "Advanced troubleshooting techniques"
+      - "Quality assurance procedures"
+      - "Performance benchmarking"
+      - "User interface design"
+    
+    practical:
+      - "Complete project implementation"
+      - "Conduct thorough testing"
+      - "Document implementation details"
+      - "Prepare demonstration materials"
+    
+    assessment:
+      type: "project_progress"
+      weight: "10%"
+      deliverables:
+        - "Working system demonstration"
+        - "Implementation documentation"
+        - "Test results and analysis"
+
+  week_12:
+    title: "Project Presentations and Assessment"
+    theory:
+      - "Technical presentation skills"
+      - "Peer review processes"
+      - "Continuous improvement methodologies"
+      - "Future technology trends"
+    
+    practical:
+      - "Present final projects"
+      - "Conduct peer evaluations"
+      - "Demonstrate system capabilities"
+      - "Discuss future enhancements"
+    
+    assessment:
+      type: "final_presentation"
+      weight: "25%"
+      deliverables:
+        - "Final project demonstration"
+        - "Complete technical documentation"
+        - "Presentation slides and materials"
+        - "Peer evaluation forms"
+
+assessment_criteria:
+  technical_competence:
+    weight: "40%"
+    description: "Ability to configure, operate, and troubleshoot APRS systems"
+    rubric:
+      excellent: "Demonstrates mastery of all technical concepts with innovative solutions"
+      good: "Shows solid understanding with successful implementation of most features"
+      satisfactory: "Basic competence with some technical limitations"
+      needs_improvement: "Limited technical understanding requiring additional support"
+  
+  analysis_and_documentation:
+    weight: "30%"
+    description: "Quality of technical analysis and documentation"
+    rubric:
+      excellent: "Comprehensive analysis with clear, professional documentation"
+      good: "Good analytical skills with well-structured documentation"
+      satisfactory: "Adequate analysis with acceptable documentation quality"
+      needs_improvement: "Weak analysis or poor documentation requiring improvement"
+  
+  practical_skills:
+    weight: "20%"
+    description: "Hands-on ability to work with radio hardware and software"
+    rubric:
+      excellent: "Confident and efficient with all hardware and software components"
+      good: "Competent with most practical tasks and minimal supervision"
+      satisfactory: "Basic practical skills with some guidance needed"
+      needs_improvement: "Limited practical ability requiring significant support"
+  
+  collaboration_and_communication:
+    weight: "10%"
+    description: "Ability to work effectively in teams and communicate results"
+    rubric:
+      excellent: "Outstanding teamwork and communication skills"
+      good: "Good collaboration with clear communication"
+      satisfactory: "Adequate teamwork and communication abilities"
+      needs_improvement: "Poor collaboration or communication skills"
+
+resources:
+  textbooks:
+    primary:
+      - "APRS Protocol Reference Guide v1.0.1"
+      - "Amateur Radio Digital Communications Handbook"
+    
+    supplementary:
+      - "The ARRL Handbook for Radio Communications"
+      - "Digital Signal Processing in Communications Systems"
+  
+  online_resources:
+    - "APRS.org official documentation"
+    - "Direwolf Software Documentation"
+    - "Leeds Space Comms project repository"
+    - "OFCOM Amateur Radio Licensing"
+  
+  software_tools:
+    - "Leeds APRS Pi system"
+    - "YAAC (Yet Another APRS Client)"
+    - "Wireshark for protocol analysis"
+    - "GNU Radio for signal processing"
+
+safety_considerations:
+  rf_safety:
+    - "Maximum power levels for lab environment"
+    - "Safe distances during transmission"
+    - "RF exposure calculations and limits"
+  
+  electrical_safety:
+    - "Proper grounding techniques"
+    - "Safe voltage levels for student projects"
+    - "Emergency shutdown procedures"
+  
+  regulatory_compliance:
+    - "Amateur radio licensing requirements"
+    - "Frequency allocations and band plans"
+    - "International regulations (ITU)"
+
+project_examples:
+  beginner:
+    - "Basic APRS weather station"
+    - "Mobile tracker for vehicle/bicycle"
+    - "Simple digipeater implementation"
+  
+  intermediate:
+    - "APRS messaging system with custom interface"
+    - "Multi-band APRS gateway"
+    - "Automated emergency beacon system"
+  
+  advanced:
+    - "Machine learning for APRS traffic analysis"
+    - "Software-defined radio APRS implementation"
+    - "Mesh networking extension for APRS"
+
+industry_connections:
+  guest_speakers:
+    - "Local amateur radio club representatives"
+    - "Emergency services communications officers"
+    - "RF engineering professionals"
+    - "Software-defined radio experts"
+  
+  field_trips:
+    - "Local amateur radio repeater sites"
+    - "Emergency operations center visit"
+    - "Commercial radio facility tour"
+  
+  internship_opportunities:
+    - "Local engineering companies"
+    - "Government communications agencies"
+    - "Research institutions"
+    - "Amateur radio equipment manufacturers"
+
+continuous_improvement:
+  feedback_mechanisms:
+    - "Weekly lab feedback sessions"
+    - "Mid-semester course evaluation"
+    - "Final course review and suggestions"
+    - "Alumni feedback collection"
+  
+  updates_and_revisions:
+    - "Annual curriculum review"
+    - "Technology updates integration"
+    - "Industry feedback incorporation"
+    - "Student outcome assessment"
