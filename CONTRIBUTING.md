@@ -408,21 +408,7 @@ configure_new_hardware() {
 #### Leeds Space Comms Members
 - **Club meetings**: In-person discussion
 - **Internal forum**: Club-specific discussions
-- **Email lists**: Project announcements
 
-### Getting Help
-
-#### For Contributors
-- **Documentation**: Comprehensive guides available
-- **Issue templates**: Structured problem reporting
-- **Discussion forums**: Community support
-
-#### For Leeds Members
-- **Technical officer**: Direct support available
-- **Lab sessions**: Hands-on assistance
-- **Mentorship**: Experienced member guidance
-
----
 
 ## Legal and Licensing
 
@@ -488,11 +474,10 @@ By contributing, you agree that your contributions will be licensed under the MI
 
 We appreciate all contributors who help make this project better for the amateur radio community. Your efforts help promote education, experimentation, and innovation in amateur radio.
 
-    - Al-Musbahi
+    Primary Developer - Al-Musbahi
 
 ### Contact Information
 
-- **Project Maintainers**: [List of maintainers]
 - **Leeds Space Comms**: https://github.com/space-comms
 - **GitHub Issues**: For technical questions
 - **Community Forum**: For general discussions

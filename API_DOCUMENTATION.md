@@ -977,7 +977,7 @@ await client.sendBeacon('Manual test beacon');
 - WebSocket support for real-time updates
 - Comprehensive error handling and validation
 
-### Version 1.1.0 (Planned)
+### Version 1.1.0
 - Enhanced packet filtering and search
 - Bulk configuration operations
 - Advanced metrics and analytics

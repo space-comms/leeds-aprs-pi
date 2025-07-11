@@ -395,23 +395,12 @@ python -m pytest tests/
 - **Documentation Pages**: 15+
 - **Test Coverage**: 85%+
 
-## 🏆 Acknowledgments
+## 🏆 Acknowledgments / Open Source Dependencies
 
-### Leeds Space Communications Society
-- **Project Lead**: [Your Name]
-- **Contributors**: [List of contributors]
-- **Faculty Advisor**: [Advisor name]
-
-### Open Source Dependencies
 - **Direwolf**: WB2OSZ - APRS software modem
 - **Flask**: Web framework for API
 - **Docker**: Containerization platform
 - **Bootstrap**: Web interface styling
-
-### Community Thanks
-- **APRS Community**: For protocol development and support
-- **Amateur Radio Community**: For testing and feedback
-- **Educational Institutions**: For adoption and feedback
 
 ## 📄 License
 
@@ -429,16 +418,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Documentation**: [docs/](docs/) directory
 - **GitHub Issues**: Report bugs and request features
 - **Discussions**: Community Q&A and ideas
-- **Email**: [Contact information]
-
-### Leeds Students
-- **Lab Support**: Available during lab hours
-- **Office Hours**: [Schedule]
-- **Course Integration**: Contact your instructor
 
 ---
 
-**Leeds University Space Communications Society**  
-*Advancing amateur radio education and experimentation*
-
-**73 de Leeds Space Comms! 🚀**
+**Made by Al-Musbahi for the Leeds University Space Communications Society**  

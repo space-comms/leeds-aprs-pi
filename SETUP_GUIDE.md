@@ -1,10 +1,10 @@
-# Leeds APRS Pi - Complete Setup Guide
+﻿# Leeds APRS Pi - Complete Setup Guide
 
-## ?? Overview
+## 📋 Overview
 
 This guide provides comprehensive instructions for setting up the Leeds APRS Pi system across different platforms and use cases. Whether you're a student, instructor, or amateur radio operator, this guide will help you get your APRS station operational quickly and efficiently.
 
-## ?? Pre-Installation Checklist
+## 🎯 Pre-Installation Checklist
 
 ### Required Information
 - [ ] **Amateur Radio Callsign** (required for transmission)
@@ -25,7 +25,7 @@ This guide provides comprehensive instructions for setting up the Leeds APRS Pi 
 - [ ] **USB Audio Interface** (for radio connections)
 - [ ] **Ham Radio Transceiver** (for two-way operation)
 
-## ?? Installation Methods
+## 🚀 Installation Methods
 
 ### Method 1: Quick Start with Docker Compose (Recommended)
 
@@ -153,7 +153,7 @@ gunzip -c leeds-aprs-pi.img.gz | sudo dd of=/dev/sdX bs=4M status=progress
 4. **Complete setup wizard** with your station information
 5. **System will reboot** and start APRS services automatically
 
-## ?? Detailed Configuration
+## ⚙️ Detailed Configuration
 
 ### Station Configuration
 
@@ -269,7 +269,7 @@ LOGDIR /app/logs
 LOGFILE direwolf.log
 ```
 
-## ?? Hardware Setup
+## 🔧 Hardware Setup
 
 ### RTL-SDR Setup
 
@@ -358,7 +358,7 @@ alsamixer
 sudo alsactl store
 ```
 
-## ?? Network Configuration
+## 🌐 Network Configuration
 
 ### APRS-IS Server Selection
 
@@ -410,7 +410,7 @@ sudo ufw allow from 192.168.1.0/24 to any port 8080
 sudo ufw logging on
 ```
 
-## ?? Web Interface Setup
+## 📱 Web Interface Setup
 
 ### Accessing the Dashboard
 
@@ -442,7 +442,7 @@ The web interface is fully responsive and works on:
 - **Fast loading times**
 - **Offline capability** for basic monitoring
 
-## ?? Educational Setup
+## 🎓 Educational Setup
 
 ### Classroom Deployment
 
@@ -499,7 +499,7 @@ environment:
   --display-progress true
 ```
 
-## ?? Testing and Verification
+## 🔍 Testing and Verification
 
 ### System Testing
 
@@ -565,7 +565,7 @@ docker stats
 ./scripts/stability-test.sh --duration 24h
 ```
 
-## ??? Troubleshooting
+## 🛠️ Troubleshooting
 
 ### Common Issues and Solutions
 
@@ -636,7 +636,7 @@ docker-compose logs -f
 ./scripts/generate-diagnostic-report.sh
 ```
 
-## ?? Monitoring and Maintenance
+## 📊 Monitoring and Maintenance
 
 ### System Monitoring
 
@@ -691,7 +691,7 @@ docker-compose up -d
 ./scripts/restore-backup.sh --backup-file backup-20231215.tar.gz
 ```
 
-## ?? Next Steps
+## 🎯 Next Steps
 
 ### After Successful Installation
 
@@ -710,24 +710,7 @@ docker-compose up -d
    - Configure additional APRS applications
    - Integrate with other amateur radio software
 
-### Educational Next Steps
-
-1. **Course Integration**
-   - Integrate with existing curriculum
-   - Develop custom lab exercises
-   - Create assessment rubrics
-
-2. **Student Projects**
-   - Assign individual station configurations
-   - Develop group projects
-   - Create research opportunities
-
-3. **Community Engagement**
-   - Connect with local amateur radio clubs
-   - Participate in APRS networks
-   - Share experiences with other educators
-
-## ?? Support and Resources
+## 📞 Support and Resources
 
 ### Getting Help
 
@@ -736,18 +719,10 @@ docker-compose up -d
 - **Community Forums**: Amateur radio communities and forums
 - **Documentation**: Comprehensive guides in `/docs/` directory
 
-#### Educational Support
-- **Course Integration**: Contact maintainers for curriculum support
-- **Training Materials**: Available in `/templates/` directory
-- **Assessment Tools**: Automated grading and progress tracking
 
-#### Professional Support
-- **Consulting Services**: Available for institutional deployments
-- **Custom Development**: Tailored solutions for specific requirements
-- **Training Workshops**: On-site and virtual training sessions
 
 ---
 
 **This setup guide is maintained by the Leeds Space Communications Society. For questions, suggestions, or support, please visit our GitHub repository or contact the maintainers directly.**
 
-**Good luck with your APRS adventures! 73 de Leeds Space Comms! ??**
+**Good luck with your APRS adventures! 73 de Leeds Space Comms! 🚀**

@@ -56,19 +56,6 @@ leeds-aprs-pi/
 - **Log management**: Centralized logging with rotation
 - **Web dashboard**: Modern HTML5 interface for system management
 
-### 🎓 Educational Focus
-- **Leeds Space Comms ready**: Pre-configured for club operations
-- **Comprehensive documentation**: Step-by-step guides for all levels
-- **Educational examples**: Clear code comments and explanations
-- **Project integration**: Designed for university coursework
-
-## Technical Implementation
-
-### Coding Style Compliance
-- **Detailed changelogs**: Each file has comprehensive change history
-- **Clear comments**: Explaining functionality and purpose
-- **Structured code**: Proper organization and spacing
-- **Error handling**: Robust error detection and recovery
 
 ### Docker Architecture
 ```

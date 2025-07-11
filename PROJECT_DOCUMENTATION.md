@@ -282,25 +282,6 @@ POST /api/shutdown                # Shutdown system
 POST /api/backup                  # Create configuration backup
 ```
 
-## ?? Educational Integration
-
-### Course Integration Examples
-
-#### Electronics Engineering (ELEC2630)
-- **Learning Objectives**: Digital signal processing, modulation theory
-- **Lab Exercise**: APRS signal analysis and demodulation
-- **Assessment**: Design custom APRS decoder
-
-#### Computer Science (COMP2611)
-- **Learning Objectives**: Embedded systems, real-time programming
-- **Lab Exercise**: Raspberry Pi hardware interfacing
-- **Assessment**: Implement custom APRS application
-
-#### Amateur Radio License Preparation
-- **Learning Objectives**: Protocol understanding, practical application
-- **Lab Exercise**: Set up complete APRS station
-- **Assessment**: Demonstrate proper amateur radio operation
-
 ### Laboratory Deployment
 
 #### Multi-Station Setup

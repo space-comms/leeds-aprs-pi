@@ -1,21 +1,21 @@
-/*
-Changelog - Dockerfile
-
-[Initial]
-- ARM64 base image for Raspberry Pi 3/4/5 compatibility
-- Direwolf APRS software installation and configuration
-- GPS daemon (gpsd) support for position tracking
-- RTL-SDR tools for software-defined radio operations
-- Audio system libraries for soundcard interface support
-- Environment variable configuration for callsign and location
-- Automatic service startup with health monitoring
-
-[Purpose]
-- Provides containerized APRS and beacon functionality
-- Supports multiple hardware interfaces (RTL-SDR, GPS, audio)
-- Enables consistent deployment across different Pi configurations
-- Designed for Leeds Space Comms club operations and educational use
-*/
+#
+# Changelog - Dockerfile
+#
+# [Initial]
+# - ARM64 base image for Raspberry Pi 3/4/5 compatibility
+# - Direwolf APRS software installation and configuration
+# - GPS daemon (gpsd) support for position tracking
+# - RTL-SDR tools for software-defined radio operations
+# - Audio system libraries for soundcard interface support
+# - Environment variable configuration for callsign and location
+# - Automatic service startup with health monitoring
+#
+# [Purpose]
+# - Provides containerized APRS and beacon functionality
+# - Supports multiple hardware interfaces (RTL-SDR, GPS, audio)
+# - Enables consistent deployment across different Pi configurations
+# - Designed for Leeds Space Comms club operations and educational use
+#
 
 # Use ARM64 base image optimized for Raspberry Pi
 FROM arm64v8/debian:bullseye-slim
@@ -48,9 +48,15 @@ RUN apt-get update && apt-get install -y \
     direwolf \
     # Network and USB utilities
     usbutils \
+    # Python for API server
+    python3 \
+    python3-pip \
     # Cleanup package cache
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
+# Install Python packages
+RUN pip3 install flask flask-cors flask-socketio psutil requests
 
 # Create application directory structure
 RUN mkdir -p /app/config /app/scripts /app/logs /app/data

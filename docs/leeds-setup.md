@@ -21,7 +21,7 @@ This guide provides specific setup instructions for Leeds Space Comms members an
 - Foster innovation in radio technology
 
 ### Club Information
-- **Callsign**: G0XYZ (Example - use actual club callsign)
+- **Callsign**: G0XYZ (Example - use actual club callsign when received)
 - **Location**: University of Leeds, Leeds, UK
 - **Grid Square**: IO93ST
 - **Coordinates**: 53.8008°N, 1.5491°W

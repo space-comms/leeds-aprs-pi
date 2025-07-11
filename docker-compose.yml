@@ -17,8 +17,6 @@
 # - Supports development and production environments
 #
 
-version: '3.8'
-
 services:
   # Main APRS service with Direwolf
   aprs:
