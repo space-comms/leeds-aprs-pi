@@ -1,4 +1,4 @@
-# Leeds APRS Pi 📡
+# Leeds APRS Pi 📡 v1.1.0
 
 A comprehensive, containerized APRS (Automatic Packet Reporting System) solution designed for educational use, amateur radio experimentation, and rapid deployment. Originally developed for the Leeds Space Communications Society but suitable for any amateur radio operator or educational institution.
 
@@ -11,6 +11,14 @@ The Leeds APRS Pi transforms a Raspberry Pi into a complete APRS station with mi
 - **Professional web interface** for monitoring and configuration
 - **Multi-platform support** (Raspberry Pi, Linux, Windows, macOS)
 - **Containerized deployment** for easy installation and management
+
+## 🆕 What's New in v1.1.0
+
+- **Complete API Server**: Full Flask implementation with WebSocket support
+- **Enhanced Testing**: Comprehensive test suite with 15+ integration tests
+- **Improved Docker**: Fixed configuration issues and optimized builds
+- **Better Documentation**: Professional-grade documentation suite
+- **Quality Assurance**: Automated code validation and testing framework
 
 ## 📋 Table of Contents
 
@@ -28,9 +36,8 @@ The Leeds APRS Pi transforms a Raspberry Pi into a complete APRS station with mi
 
 ## 🚀 Quick Start
 
-### Method 1: Docker Compose (Recommended)
-# Clone the repository
-git clone https://github.com/leedsspace/leeds-aprs-pi.git
+### Method 1: Docker Compose (Recommended)# Clone the repository
+git clone https://github.com/leedsspacecomms/leeds-aprs-pi.git
 cd leeds-aprs-pi
 
 # Configure your station (edit docker-compose.yml)
@@ -41,15 +48,14 @@ docker-compose up -d
 
 # Access web interface
 open http://localhost:8080
-### Method 2: Automated Setup Script
-# Download and run setup script
-curl -fsSL https://raw.githubusercontent.com/leedsspace/leeds-aprs-pi/main/scripts/setup.sh | sudo bash
+### Method 2: Automated Setup Script# Download and run setup script
+curl -fsSL https://raw.githubusercontent.com/leedsspacecomms/leeds-aprs-pi/main/scripts/setup.sh | sudo bash
 
 # Follow interactive prompts
 # System will auto-configure based on your hardware
 ### Method 3: Pre-built Images
 
-Download pre-configured Raspberry Pi images from the [releases page](https://github.com/leedsspace/leeds-aprs-pi/releases).
+Download pre-configured Raspberry Pi images from the [releases page](https://github.com/leedsspacecomms/leeds-aprs-pi/releases).
 
 ## 💻 System Requirements
 
@@ -83,7 +89,7 @@ curl -fsSL https://get.docker.com | sh
 sudo pip3 install docker-compose
 
 # Clone repository
-git clone https://github.com/leedsspace/leeds-aprs-pi.git
+git clone https://github.com/leedsspacecomms/leeds-aprs-pi.git
 cd leeds-aprs-pi
 
 # Configure environment
@@ -96,7 +102,7 @@ docker-compose up -d
 
 For new Raspberry Pi installations:
 # Download setup script
-wget https://raw.githubusercontent.com/leedsspace/leeds-aprs-pi/main/scripts/setup.sh
+wget https://raw.githubusercontent.com/leedsspacecomms/leeds-aprs-pi/main/scripts/setup.sh
 
 # Make executable and run
 chmod +x setup.sh
@@ -111,7 +117,7 @@ sudo apt-get update
 sudo apt-get install -y docker.io docker-compose git
 
 # Clone and configure
-git clone https://github.com/leedsspace/leeds-aprs-pi.git
+git clone https://github.com/leedsspacecomms/leeds-aprs-pi.git
 cd leeds-aprs-pi
 
 # Build containers
@@ -279,8 +285,7 @@ POST /api/beacon      # Send beacon
 
 ## 🔍 API Documentation
 
-### Status API
-# Get system status
+### Status API# Get system status
 curl http://localhost:8000/api/status
 
 # Response format
@@ -303,16 +308,14 @@ curl http://localhost:8000/api/status
     "temperature": 42.5
   }
 }
-### Configuration API
-# Get configuration
+### Configuration API# Get configuration
 curl http://localhost:8000/api/config
 
 # Update configuration
 curl -X POST http://localhost:8000/api/config \
   -H "Content-Type: application/json" \
   -d '{"callsign": "W1ABC", "beacon_interval": 300}'
-### Logging API
-# Get recent logs
+### Logging API# Get recent logs
 curl http://localhost:8000/api/logs?lines=50
 
 # Stream logs (WebSocket)
@@ -343,7 +346,8 @@ telnet rotate.aprs2.net 14580
 sudo ufw status
 ### Debug Mode
 
-Enable debug logging:# Enable debug mode
+Enable debug logging:
+# Enable debug mode
 export DEBUG=1
 docker-compose up
 
@@ -361,13 +365,28 @@ export APRS_SERVER="local.aprs2.net"
 
 # Adjust filter radius
 export FILTER_RADIUS=25
+## 🧪 Testing & Validation
+
+### Run Test Suite# Run comprehensive tests
+python tests/test_full_system.py
+
+# Validate Docker configuration
+docker-compose config
+
+# Check service health
+docker-compose ps
+### Manual Testing
+- **Hardware Detection**: Verify RTL-SDR, GPS, and audio device detection
+- **APRS Functionality**: Test beacon transmission and packet reception
+- **Web Interface**: Validate dashboard functionality and responsiveness
+- **API Endpoints**: Test all REST API endpoints and WebSocket connections
+
 ## 🤝 Contributing
 
 We welcome contributions from the amateur radio community! See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
-### Development Setup
-# Clone repository
-git clone https://github.com/leedsspace/leeds-aprs-pi.git
+### Development Setup# Clone repository
+git clone https://github.com/leedsspacecomms/leeds-aprs-pi.git
 cd leeds-aprs-pi
 
 # Set up development environment
@@ -378,8 +397,7 @@ cd leeds-aprs-pi
 
 # Start development server
 docker-compose -f docker-compose.dev.yml up
-### Testing
-# Run unit tests
+### Testing# Run unit tests
 python -m pytest tests/
 
 # Run integration tests
@@ -392,8 +410,9 @@ python -m pytest tests/
 - **Languages**: Python, JavaScript, Shell, Dockerfile
 - **Containers**: 3 (APRS, Web, API)
 - **Supported Platforms**: 5+
-- **Documentation Pages**: 15+
+- **Documentation Pages**: 18+
 - **Test Coverage**: 85%+
+- **API Endpoints**: 15+
 
 ## 🏆 Acknowledgments / Open Source Dependencies
 
@@ -421,4 +440,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Made by Al-Musbahi for the Leeds University Space Communications Society**  
+**Made
