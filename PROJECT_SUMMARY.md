@@ -2,7 +2,8 @@
 
 ## Project Overview
 
-I've created a comprehensive, production-ready Dockerized APRS & Beacon System for Raspberry Pi, specifically designed for Leeds Space Comms but open to the public.
+A comprehensive, production-ready Dockerized APRS & Beacon System for Raspberry Pi, specifically designed for Leeds Space Comms but open to the public.
+
 ## File Structure Created
 
 ```

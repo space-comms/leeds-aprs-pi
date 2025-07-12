@@ -185,7 +185,7 @@ sudo systemctl restart direwolf
 
 3. **Contact support**:
    - Open an issue on GitHub
-   - Email: space@leeds.ac.uk
+   - Email: inbox@leedsspacecomms.co.uk
    - Discord: Leeds Space Comms server
 
 ## Advanced Features
