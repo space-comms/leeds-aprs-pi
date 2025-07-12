@@ -18,62 +18,41 @@
 #
 
 services:
-  # Main APRS service with Direwolf
   aprs:
     build: .
     container_name: leeds-aprs-pi
-    hostname: aprs-node
-    
-    # Hardware device access
-    devices:
-      - "/dev/bus/usb:/dev/bus/usb"           # RTL-SDR USB access
-      - "/dev/ttyUSB0:/dev/ttyUSB0"           # GPS dongle (if present)
-      - "/dev/ttyACM0:/dev/ttyACM0"           # Alternative GPS interface
-    
-    # Volume mounts for configuration and data persistence
-    volumes:
-      - ./config:/app/config:ro               # Configuration files (read-only)
-      - ./scripts:/app/scripts:ro             # Startup scripts (read-only)
-      - ./logs:/app/logs:rw                   # Log files (read-write)
-      - ./data:/app/data:rw                   # Persistent data storage
-      - /dev/shm:/dev/shm                     # Shared memory for audio
-    
-    # Port mappings
-    ports:
-      - "14580:14580"                         # APRS-IS port
-      - "8000:8000"                           # API server
-      - "8001:8001"                           # Status monitoring
-    
-    # Environment variables - CUSTOMIZE THESE FOR YOUR STATION
-    environment:
-      - CALLSIGN=G0ABC                        # Your amateur radio callsign
-      - APRS_PASS=12345                       # Your APRS-IS passcode
-      - LAT=53.8008                           # Latitude (Leeds University default)
-      - LON=-1.5491                           # Longitude (Leeds University default)
-      - BEACON_MESSAGE=Leeds Space Comms APRS Node
-      - BEACON_INTERVAL=600                   # Beacon every 10 minutes
-      - SYMBOL_TABLE=/                        # APRS symbol table
-      - SYMBOL_CODE=&                         # Gateway symbol
-      - TZ=Europe/London                      # Timezone
-    
-    # Restart policy for reliable operation
-    restart: unless-stopped
-    
-    # Privileged mode for hardware access
     privileged: true
-    
-    # Network configuration
     network_mode: host
-    
-    # Health check
+    volumes:
+      - ./config:/app/config:ro
+      - ./scripts:/app/scripts:ro
+      - ./logs:/app/logs:rw
+      - ./data:/app/data:rw
+      - /dev/shm:/dev/shm
+    devices:
+      - "/dev/bus/usb:/dev/bus/usb"
+      - "/dev/ttyUSB0:/dev/ttyUSB0"
+      - "/dev/ttyACM0:/dev/ttyACM0"
+    environment:
+      # REQUIRED: Update these with your station details
+      - CALLSIGN=G0ABC                    # Your callsign
+      - APRS_PASS=12345                   # APRS-IS passcode from aprs.fi
+      - LAT=53.8008                       # Latitude 
+      - LON=-1.5491                       # Longitude
+      
+      # OPTIONAL: Customize these if needed
+      - BEACON_MESSAGE=Leeds APRS Pi Station
+      - BEACON_INTERVAL=600               # Seconds between beacons
+      - SYMBOL_TABLE=/                    # APRS symbol table
+      - SYMBOL_CODE=&                     # APRS symbol code
+      - TZ=Europe/London                  # Timezone
+    restart: unless-stopped
     healthcheck:
       test: ["CMD", "pgrep", "-f", "direwolf"]
       interval: 30s
       timeout: 10s
       retries: 3
-      start_period: 40s
 
-  # Web dashboard service
   dashboard:
     image: nginx:alpine
     container_name: aprs-dashboard
@@ -84,29 +63,3 @@ services:
     depends_on:
       - aprs
     restart: unless-stopped
-
-  # Log aggregation service
-  logmon:
-    image: alpine:latest
-    container_name: aprs-logmon
-    volumes:
-      - ./logs:/logs:ro
-    command: tail -f /logs/direwolf.log
-    depends_on:
-      - aprs
-    restart: unless-stopped
-
-# Network configuration
-networks:
-  default:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 172.20.0.0/16
-
-# Volume definitions
-volumes:
-  aprs_logs:
-    driver: local
-  aprs_data:
-    driver: local

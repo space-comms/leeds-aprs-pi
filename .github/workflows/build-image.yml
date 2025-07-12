@@ -1,0 +1,67 @@
+name: Build Leeds APRS Pi Image
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build-image:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y qemu-user-static kpartx parted curl xz-utils
+        
+    - name: Build SD card image
+      run: |
+        chmod +x build-image.sh
+        sudo ./build-image.sh
+        
+    - name: Upload image as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: leeds-aprs-pi-image
+        path: build/leeds-aprs-pi-*.img.gz*
+        
+    - name: Create release
+      if: startsWith(github.ref, 'refs/tags/')
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          build/leeds-aprs-pi-*.img.gz
+          build/leeds-aprs-pi-*.img.gz.sha256
+        body: |
+          ## Leeds APRS Pi Release
+          
+          **Flash & Go Instructions:**
+          1. Download the `.img.gz` file below
+          2. Use [Raspberry Pi Imager](https://rpi.org/imager) or [Rufus](https://rufus.ie/) to flash to SD card
+          3. Insert SD card into Pi and power on
+          4. Connect to WiFi network "Leeds-APRS-Setup" (password: aprssetup)
+          5. Open browser to http://192.168.4.1 and configure your station
+          
+          **What's included:**
+          - Complete APRS station software
+          - Web-based configuration interface
+          - Hardware auto-detection (RTL-SDR, GPS, audio)
+          - APRS-IS connectivity
+          - Educational features for universities and clubs
+          
+          **System Requirements:**
+          - Raspberry Pi 3B+ or newer
+          - 8GB+ SD card
+          - Internet connection
+          - Amateur radio license for transmission
+          
+          **For Windows users:** Download `flash-windows.bat` for easy flashing with Rufus
+          
+          73 de Leeds Space Comms! ??
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
